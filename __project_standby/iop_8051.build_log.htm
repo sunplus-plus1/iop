@@ -1,0 +1,36 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+C:\Users\pub\Downloads\firmware\__project_standby\iop_8051.uvproj
+Project File Date:  12/02/2021
+
+<h2>Output:</h2>
+Rebuild target 'Target 1'
+compiling sunreg.c...
+assembling startup.a51...
+compiling standby_main.c...
+compiling Int_Vec.c...
+linking...
+Program Size: data=223.0 xdata=0 code=1288
+creating hex file from "iop_8051"...
+User command #1: ..\tools\srec_cat.exe  iop_8051.hex -Intel -byte-swap 4 -fill 0xff 0 16384 -o  iop_8051.bin -Binary
+srec_cat: iop_8051.hex: 11: warning: data records not in strictly ascending
+    order (expected >= 0x0477, got 0x0386)
+User command #2: ..\tools\bin2array_standby  iop_8051.bin ../out/iopstandby.c
+SDCC_NOGENRAMCLEAR:(null)
+"iop_8051" - 0 Error(s), 0 Warning(s).
+Clean started: Project: 'iop_8051'
+   deleting intermediate output files for target 'Target 1'
+
+User command #2: ..\tools\bin2array.exe iop_8051.bin ../out/dq8051_firmware.c
+"iop_8051" - 0 Error(s), 2 Warning(s).
+    MODULE:  .\startup.obj (?C_STARTUP)
+    ADDRESS: 000CH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  TIMER1_ISR
+    MODULE:  .\startup.obj (?C_STARTUP)
+    ADDRESS: 001CH
+Program Size: data=217.0 xdata=0 code=1142
+Target not created
